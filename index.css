@@ -16,16 +16,19 @@
     overflow: hidden;
     position: fixed;
     z-index: 1;
+} 
+.nav-bar a{
+    text-decoration: none;
+    color: black;
 }
-
-.logo{
+.logo a img{
     height: 61px;
     width: 55px;
     background-image: url(swiggy-logo.png);
     background-size: cover;
     transition: ease-in .2s;
 }
-.logo:hover{
+.logo a img:hover{
     transform: scale(1.2);
 }
 .add{
@@ -113,6 +116,7 @@ main{
     height: 100%;
     padding-top: 70px;
     display: flex;
+    position: relative;
 }
 .hotels{
     width: 25%;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Resto from "./Resto";
-import Shimmer from "./Shimmer";
+import Shimmer2 from "./Shimmer2";
 
 export default function Restaurent() {
   const [listOfRestaurent, setlistOfRestaurent] = useState([]);
@@ -49,14 +49,14 @@ export default function Restaurent() {
   };
 
   return listOfRestaurent.length === 0 ? (
-    <Shimmer />
+    <Shimmer2 />
   ) : (
     <>  
     <div className="hotels">
       <p>Restaurants with online food delivery in Mangaluru</p>
-      <div class="filters">
+      <div className="filters">
         <span>
-          Filter <i class="fa-solid fa-sliders"></i>{" "}
+          Filter <i className="fa-solid fa-sliders"></i>{" "}
         </span>
         <span>Sort By</span>
         <span id="long2">Fast Delivery</span>
@@ -92,3 +92,5 @@ export default function Restaurent() {
     </>
   );
 }
+
+

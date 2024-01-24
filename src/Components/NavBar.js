@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function NavBar() {
   return (
     <header>
     <div className="nav-bar">
         <div className="logo">
-
+            <Link to= "/"></Link>
         </div>
         <div className="add">
             <span>Other</span>
@@ -26,7 +27,7 @@ export default function NavBar() {
         </div>
         <div className="sign">
             <img width="20" src="https://img.icons8.com/metro/26/guest-male.png" alt="guest-male"/>
-            <span>Sign In</span>
+            <Link to="/Signin"><span>Sign In</span></Link>
         </div>
         <div className="cart">
             <img width="20" height="20" src="https://img.icons8.com/material-outlined/20/shopping-cart--v1.png" alt="shopping-cart--v1"/>

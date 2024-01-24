@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { CDN_URL2 } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
-const Carousel = () => {
+const Carousel = (props) => {
   const [carRes, setCarRes] = useState([]);
+  const [heading, setHeading] = useState('');
 
   useEffect(() => {
     fetchData2();
@@ -21,6 +23,11 @@ const Carousel = () => {
       const json = await response.json();
       const carResData = json.data?.cards[0]?.card?.card?.imageGridCards?.info || [];
       setCarRes(carResData);
+
+      const title = json.data?.cards[0]?.card?.card?.id; 
+      const arr = title.split("_");
+      const result = arr.join(" ");
+      setHeading(result);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -42,17 +49,20 @@ const Carousel = () => {
       }
       scrollAmount += step;
       if (scrollAmount >= distance) {
-        
         clearInterval(slideTimer);
       }
     }, 10);
   };
 
+  if (carRes.length === 0) {
+    return <Shimmer />;
+  }
+
   return (
     <>
       <div className="scoller">
         <div className="sbtn">
-          <span>What's on your mind?</span>
+          <span>{heading}?</span>
           <div className="scbtn">
             <i className="fa-solid fa-arrow-left" id="left" onClick={() => handleScroll('left')}></i>
             <i className="fa-solid fa-arrow-right" id="right" onClick={() => handleScroll('right')}></i>

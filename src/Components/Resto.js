@@ -11,7 +11,7 @@ export default function Resto(props) {
       avgRating,
       cuisines,
       deliveryTime,
-      cloudinaryImageId
+      cloudinaryImageId,
     } = {},
   } = resData;
 
