@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "learning react from scratch",
   "scripts": {
-    "start":"parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest"
   },
@@ -26,9 +26,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "router": "^1.3.8"
   },
-  "browserList":[
+  "browserList": [
     "last 2 version"
   ]
 }
